@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>  
+	function Validatepancard(thisField) {  
+          if (thisField.value != "") {
+			thisFieldVal = thisField.value;
+            var panPat = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+            if (thisFieldVal.search(panPat) == -1) {
+                alert("Invalid Pan No");
+                thisField.focus();
+                return false;
+            }
+        }else{
+		alert("Enter Pan No..");
+		}
+  } 
+</script>  
+</head>
+<body>
+<form name="myform">
+Pan Card Number:<input type="text" id="txtpan"/>
+<br/>
+<input type="submit" name="btnsubmit" value="Submit"/>
+</form>
+</body>
+</html>

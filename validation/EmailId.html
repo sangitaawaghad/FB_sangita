@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+/*function myFunction()
+{
+   var email=document.myForm.txtemail.value;
+   if(email.indexOf('@')<=0)
+   {
+      document.getElementById('message').innerHTML="invalid position of @";
+	  return false;
+   }
+   if((email.charAt(email.length-4)!='.')&&(email.charAt(email.length-3)!='.'))
+   {
+      document.getElementById('message').innerHTML="invalid position of .";
+	  return false;
+   }
+   return true;
+}*/
+</script>
+</head>
+<body>
+<form name="myForm" onsubmit="return myFunction()">
+Email Id:<input type="text" name="txtemail" value="" pattern="[A-Za-z0-9._-]+\@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" required><span id="message" style="color:red"></span>
+<br/>
+<input type="submit"  value="Submit" name="btnsubmit"/>
+
+</form>
+</body>
+</html>

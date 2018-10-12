@@ -1,0 +1,44 @@
+<! DOCTYPE html>
+<html>
+<head>
+<script>
+function myfunction()
+{
+    var mobileNum=document.getElementById("txtmobile").value;
+	console.log(mobileNum);
+	if(mobileNum.length==0)
+	{
+	    document.getElementById("message").innerHTML="**Please fill Mobile Number";
+		return false;
+	}
+	if(isNan(mobileNum))
+	{
+	    document.getElementById("message").innerHTML="**Enter only numeric value";
+		return false;
+	}
+	if(mobileNum.length<10)
+	{
+	    document.getElementById("message").innerHTML="**Mobile number must be 10 digit only";
+		return false;
+	}
+	if(mobileNum.length>10)
+	{
+	    document.getElementById("message").innerHTML="**Mobile number must be 10 digit only";
+		return false;
+	}
+	if((mobileNum.charAt(0)!=9) &&(mobileNum.charAt(0)!=8)&&(mobileNum.charAt(0)!=7))
+	{
+	    document.getElementById("message").innerHTML="**Mobile number must start with 9 or 8 or 7";
+		return false;
+	}
+
+}
+</script>
+</head>
+<body>
+<form name="myForm" onsubmit="return myfunction()">
+Mobile Number: <input type="text" value="" id="txtmobile" pattern="[9]{1}[0-9]{1}[7-9]{1}+[0-9]{9}" required/><span id="message" style="color:red"></span><br/><br/>
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>
