@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>Calculator</title>
+
+<style>
+form
+{
+	width:300px;
+	background:#ddd;
+	padding:30px 15px 15px 15px;
+	-webkit-box-shadow: 0 2px 5px 2px rgba(0,0,0,6);
+	box-shadow: 0 2px 5px 2px rgba(0,0,0,6);
+}
+#number , #result
+{	
+	width:300px;
+	height:40px;
+}
+input
+{
+	width:72px;
+	height:40px;
+}
+div
+{
+	margin-left:39%;
+}
+</style>
+
+<script>
+function show(n1)
+{
+	cal.number.value=n1;
+}
+</script>
+
+</head>
+
+<body>
+
+<h1 style="text-align:center; margin-top:10%;">Simple Calculator</h1>
+
+<div>
+<form name="cal">
+	<input type="text" name="result" value="" style="text-align:right;" id="result"/>
+	<br><br>
+	<input type="text" name="number" value="" style="text-align:right;" id="number"/>
+	<br><br>
+	<input type="button" name="radic" value="&radic"  = Math.sqrt(cal.number.value)">
+	<input type="button" name="ce" value="0" >
+	<input type="button" name="c" value="C" onclick="cleardata1()">
+	<input type="button" name="back" value="<-"  >
+	<br /><br />
+	<input type="button" name="btn9" value="7"  onClick="getNumber('7')" />
+	<input type="button" name="btn8" value="8"  onClick="getNumber('8')"  />
+	<input type="button" name="btn7" value="9"  onClick="getNumber('9')"   />
+	<input type="button" name="addbtn" value="+" onClick="getOperation('+')" />
+	<br /><br />
+	<input type="button" name="btn6" value="4"  onClick="getNumber('4')" />
+	<input type="button" name="btn5" value="5"  onClick="getNumber('5')" />
+	<input type="button" name="btn4" value="6"  onClick="getNumber('6')" />
+	<input type="button" name="subbtn" value="-" onClick="getOperation('-')" />
+	<br><br>
+	<input type="button" name="btn3" value="1" onClick="getNumber('1')"  />
+	<input type="button" name="btn2" value="2"  onClick="getNumber('2')" />
+	<input type="button" name="btn1" value="3"  onClick="getNumber('3')" />
+	<input type="button" name="mulbtn" value="*" onClick="getOperation('*')" />
+	<br><br>
+	<input type="button" name="btn0" value="0"  onClick="getNumber('0')" />
+	<input type="button" name="potbtn" value="." />
+	<input type="button" name="eqlbtn" value="=" onClick="evaluate('=')" />
+	<input type="button" name="divbtn" value="/" onClick="getOperation('/')"/>
+	</form>
+</div>
+<script>
+var number1 ="";
+var number2 ="";
+var expression ="";
+var operation ="";
+var result="";
+var flag="";
+function evaluate(data)
+{
+   flag=data;
+   //console.log(flag);
+}
+function cleardata()
+{
+	document.getElementById("number").value = "";
+	document.getElementById("result").value = "";
+}
+function cleardata1()
+{
+	document.getElementById("number").value = "";
+	document.getElementById("result").value = "";
+	number1 ="";
+    number2 ="";
+    expression ="";
+    operation ="";
+	
+}
+function getNumber(numberValue){
+	if(operation.length == 0){
+		if(number1.length == 0){
+			number1 = numberValue
+		}else{
+		number1 += numberValue; 
+		}
+		document.getElementById("number").value = number1;
+		//document.getElementById("result").value=number1;
+	}else{
+		if(number2.length == 0){
+			number2 = numberValue;
+		}else{
+			
+				number2 += numberValue; 
+				
+			}
+			if(expression.length==0 && operation!=0  )
+			{
+		//cleardata();
+		calculate(operation);
+		}
+		//if(operation!=0  )
+		document.getElementById("number").value = number2;
+		document.getElementById("result").value=document.getElementById("result").value+number2;
+	}
+}
+function getOperation(tempOperation){
+	if(number1.length==0)
+	{
+	  alert("Enter first Argument");
+	}else{	
+	operation = tempOperation;
+	cleardata();
+	}
+}
+function calculate(tempOperation){
+switch (tempOperation){
+case '+':
+
+ result = parseFloat(number1) + parseFloat(number2); 
+ expression = number1+" "+tempOperation+" "+number2 +" = " +result;
+ document.getElementById("result").value =expression;
+	document.getElementById("number").value = result;
+	number1 =result;
+	result="";
+ number2 = "";
+ expression="";
+ operation="";
+ flag="";
+break;
+
+case '-':
+
+ result = parseFloat(number1) - parseFloat(number2); 
+expression = number1+" "+tempOperation+" "+number2 +" = " +result;
+console.log(result);
+ document.getElementById("result").value = expression;
+	document.getElementById("number").value = result;
+	number1 =result;
+	result="";
+ number2 = "";
+ expression="";
+ operation="";
+ flag="";
+break;
+
+case '*':
+
+ result = parseFloat(number1) * parseFloat(number2); 
+expression = number1+" "+tempOperation+" "+number2 +" = " +result;
+console.log(result);
+ document.getElementById("result").value = expression;
+	document.getElementById("number").value = result;
+	number1 =result;
+	result="";
+ number2 = "";
+ expression="";
+ operation="";
+ flag="";
+break;
+
+case '/':
+
+ result = parseFloat(number1) / parseFloat(number2); 
+expression = number1+" "+tempOperation+" "+number2 +" = " +result;
+console.log(result);
+ document.getElementById("result").value = expression;
+	document.getElementById("number").value = result;
+	number1 =result;
+	result="";
+ number2 = "";
+ expression="";
+ operation="";
+ flag="";
+break;
+
+default:
+console.log('default');
+}
+}
+</script>
+</body>
+</html>
