@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Alternate Div fadeIn fadeOut</title>
+		<style>
+			.d{
+				float:left;
+				width:180px;
+				height:180px;
+				margin:40px;
+				background-color:red;		
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var d = $(".d");
+				for(var i = 0;i<d.length;i=i+2){
+						$(d[i]).hide();
+					}
+				setInterval(altdisplay,500)
+				function altdisplay(){
+					for(var i = 0;i<d.length;i++){
+						
+							$(d[i]).fadeToggle(2000);
+						
+					}
+				}				
+			});
+		</script>
+	</head>
+	<body>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+		<div class = 'd'></div>
+	</body>
+</html>
