@@ -1,0 +1,65 @@
+<html>
+<head>
+<link rel="stylesheet" href="mystyle.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+</style>
+<script>
+$(document).ready(function(){
+    $( "#datepicker" ).datepicker();
+
+});
+</script>
+    
+</head>
+<body>
+
+<table align="center">
+<tr style="background-image:url(a.jpg);background-repeat:no-repeat;width:2500px;height:200px;"><td></td></tr>
+<tr><td>
+<form class="form_div">
+<label for="fname">Employee Id</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">First Name</label><br>
+  <input type="text" id="lname" name="lname" oninvalid="this.setCustomValidity('Please Enter the First Name');" required><br>
+
+<label for="fname">Last Name</label><br>
+  <input type="text" id="fname" name="fname" oninvalid="this.setCustomValidity('Please Enter the Last Name');" required><br>
+  <label for="lname">Email Id</label><br>
+  <input type="text" id="lname" name="lname" oninvalid="this.setCustomValidity('Please Enter the Email Id');" required><br>
+  <label for="fname">Phone Number</label><br>
+  <input type="text" id="fname" name="fname" oninvalid="this.setCustomValidity('Please Enter the Phone number');" required><br>
+  <label for="lname">Hire Date</label><br>
+  <input type="Date" id="datepicker" name="lname"><br>
+  
+  <label for="fname">Job Id</label><br>
+   <div class="custom-select"> <select id="jobid"><option>Application Engineer</option>
+										<option>Web Developer</option> 
+										<option>Web Designer</option>
+										<option>UX Developer</option>
+										<option>UI developer</option>
+                        </select></div><br>
+  <label for="lname">Salary</label><br>
+  <input type="text" id="lname" name="lname" oninvalid="this.setCustomValidity('Please Enter the Monthly Salary');" required><br>
+  <label for="lname">Commission</label><br>
+  <input type="text" id="lname" name="lname" oninvalid="this.setCustomValidity('Please Enter the Commission');" required><br>
+  <label for="lname">Manager Name</label><br>
+  <input type="text" id="Mname" name="Mname" oninvalid="this.setCustomValidity('Please Enter the Manager Name');" required><br>
+  <label for="lname">Department Name</label><br>
+  <div class="custom-select"> <select id="jobid"><option>Administration</option>
+										<option>Tresury</option> 
+										<option>Accounting</option>
+										<option>Manufactureing</option>
+										<option>Construction</option>
+										<option>Government Sales</option> 
+										<option>Purchasing</option>
+										<option>Human Resource</option>
+										<option>IT</option>
+                        </select></div><br>
+			<input type="submit" name="lname" value="Submit"/><br>
+</form>
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/*
+HOW TO SEND THE DATA FROM ONE PAGE TO ANOTHER PAGE USING URL
+_______________________________________________________________-
+if we want to send the data from one page to another page
+we can use url
+means in url we can attach data using name and value pair.
+
+syntax:
+url rewritting syntax
+
+http://localhost:portnumber/projectname/urlname?name=value
+
+when we send the data from url then on another page we can access data via $_GET method
+because $_GET method access data from url
+
+
