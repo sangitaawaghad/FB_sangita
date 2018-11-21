@@ -54,7 +54,6 @@ $msg="";
 		 $c_msg="**Every thing is correct";
 	 }
  }
-
 ?>
 </body>
 </html>
