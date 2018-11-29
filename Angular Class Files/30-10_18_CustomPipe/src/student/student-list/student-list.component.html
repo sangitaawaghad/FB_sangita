@@ -1,0 +1,109 @@
+<!--<h1>Heading 1</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date Of Birth</th>
+        </tr>
+    </thead>
+
+    <tbody>
+       
+    <ng-container *ngIf="students.length > 0" >
+        <tr   *ngFor="let student of students">
+            <td [class.yellowColor] ="isRed">{{student.id}}
+             {{student.isBold?'bold':'normal'}}
+            </td>
+            <td [ngStyle]="{'font-style':student.isBold?'bold':'italic'}">{{student.name}}</td>
+            <td [style.font-size.px]="sizeNumber">{{student.name}}</td>
+           
+            <td>{{student.gender}}</td>
+            <td>{{student.dob}}</td>
+        </tr>
+     </ng-container>
+    <tr>
+        <td colspan="4" *ngIf="students.length == 0" >
+            NO Data
+        </td>
+    </tr>
+        
+        <tr>
+            <th>1</th>
+            <th>A</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>B</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>C</th>
+        </tr>
+        
+    </tbody>
+    
+</table>-->
+{{cuurent_Date}}
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+<!--        <tr *ngFor='let student of students trackBy:trackByStdCode'>
+            <td>{{student.code}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.dateOfBirth}}</td>
+        </tr>
+        <tr *ngIf="!students || students.length==0">
+            <td colspan="5">
+                No students to display
+            </td>
+        </tr>-->
+
+<tr *ngFor='let student of students index as i first as isFirst last as isLast
+        even as isEven
+       odd as isOdd
+       trackBy:trackByStdCode
+    '>
+            <td>{{student.code|uppercase}}</td>
+            <td>{{student.name|salutation:student.gender}}</td>
+            <td>{{student.gender|titlecase }}</td>
+            <td>{{cuurent_Date|date:'EEEE,d-MMMM-y h:mm:ss:a'}}</td>
+            <td>{{student.marks|percent:'6.3-10'}}</td>
+            <td>{{student.cost|currency:"CAD":true:'2.1-5'}}</td>
+            <td>{{i}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isLast}}</td>
+            <td>{{isEven}}</td>
+            <td>{{isOdd}}</td>
+        </tr>
+        <tr *ngIf="!students || students.length==0">
+            <td colspan="5">
+                No stuclickdents to display
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<button (click)="getStudents()">Show More</button>
+
+<!--<button (click)='getStudents()'>Refresh Students</button>-->
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<h1>
+{{numberOne}}
+
+	<div class="class1" *ngIf="numberOne < numberTwo">Number One is less than NumberTwo</div>
+	<div class="class2" *ngIf="numberOne > numberTwo">Number One is greater than NumberTwo</div>
+      <table border='1'>
+	    <thead>
+		  <tr>
+		   <th>Sr.No</th>
+		   <th>Id</th>
+		   <th>Name</th>
+		   <th>Salary</th>
+		   <th>Date Of Birth</th>
+		   <th>Login Time</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<!-- <tr *ngFor="let employee of employees let i = index">
+			    <td >
+				{{i+1}}
+			   </td>
+			   <td>
+				{{employee.id}}
+			   </td>
+			   <td >
+				{{employee.name |lowercase}}
+				{{employee.name |uppercase}}
+			   </td>
+			   <td > 
+				{{employee.salary|currency:'EUR':true}}
+				<br />
+				<!-- Currency code : Currency symbol(boolean): 'digit before decimal 
+				.min number after decimal - maximum number after decimal
+				' 
+				{{employee.salary|currency:'EUR':true:'2.3-4'}}
+				
+				 <br />
+				{{employee.salary|number}}
+<br />
+				{{employee.salary}}
+			   </td>
+		    </tr>
+			<tr *ngIf="employees.length ==0 ">
+			  <td colspan="3">NO Employees</td>
+			</tr>
+		</tbody>
+ -->		
+		<tr *ngFor="let employee of employees let i = index">
+			    <td >
+				{{i+1}}
+			   </td>
+			   <td>
+				{{employee.id}}
+			   </td>
+			   <td >
+				{{employee.name |lowercase}}
+				{{employee.name |uppercase}}
+			   </td>
+			   <td > 
+				{{employee.salary|currency:'EUR':true}}
+				
+			   </td>			
+			   <td>{{employee.dob|date:'MM-dd-yyyy hh:mm:ss'}}</td>
+			   <td>{{employee.logintime|date:'shortTime'}}</td>
+		     </tr>
+			<tr *ngIf="employees.length ==0 ">
+			  <td colspan="3">NO Employees</td>
+			</tr>
+		</tbody>
+	  </table>
+	 </h1>

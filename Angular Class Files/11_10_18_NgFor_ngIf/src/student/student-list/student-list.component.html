@@ -1,0 +1,42 @@
+<h1>Heading 1</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date Of Birth</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <ng-container *ngIf="students.length > 0" >
+        <tr   *ngFor="let student of students">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.dob}}</td>
+        </tr>
+     </ng-container>
+    <tr>
+        <td colspan="4" *ngIf="students.length == 0" >
+            NO Data
+        </td>
+    </tr>
+        
+<!--        <tr>
+            <th>1</th>
+            <th>A</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>B</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>C</th>
+        </tr>-->
+        
+    </tbody>
+    
+</table>

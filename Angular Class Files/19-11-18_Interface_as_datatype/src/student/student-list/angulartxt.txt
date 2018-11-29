@@ -1,0 +1,22 @@
+10 -15 
+10 - offset 
+5 limit 
+
+Pipes : to transform data in format before displaying the content 
+Syntax  : {{ |pipename:arguments}}
+ how to get pipe symbol : just click shift + forward slash / use single or operator 
+You can have inbuilt as well as custom pipes 
+some inbuilt pipes are 
+	1)Uppercase :- to convert string to uppercase (angular 2 and onwards)   
+	syntax : {{expression|uppercase}}
+	2)lowecase : to convert string to lowercase
+	syntax :{{expression|lowercase}}
+    (angular 2 and onwards)  
+	3)titlecase : to convert string to titlecase 
+	syntax :{{expression|titlecase}} 
+	(angular 4 and onwards).
+	4)Percentage 
+    5)currency: {{expression|currency:code:display:diginfo:}}
+	currency:string:string/bool:minDecimal.minfraction-maxfraction
+    6)date : {{expression|date}}
+     expect date always in m/d/y

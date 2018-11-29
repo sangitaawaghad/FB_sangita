@@ -1,0 +1,21 @@
+
+  Conclusion 
+  1.Interface can used as datatype 
+  2.while using interface as datatype no 
+  need to implement but need to be imported and used asv datatype of object
+  3.By Spacifying ? we can make variable 
+  as optional in interface 
+  
+  A)CReate an Assignment to list 
+  employee with code,name,dob ,gender,
+  maritial status   
+  salary with saluation custom filter 
+  on basis of gender and maritial status 
+     1.Male & Single MS
+	 2.Female & Single MISS 
+	 3.male & Married MR 
+	 4.female & Married MRS 
+  
+	 
+  
+  

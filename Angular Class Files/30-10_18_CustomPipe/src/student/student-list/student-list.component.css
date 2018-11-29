@@ -1,0 +1,16 @@
+table,th,td{
+  border:1px solid black !important;
+ 
+}
+table {
+    border-collapse: collapse;
+}
+
+.redColor{
+    
+    color:red;
+}
+.yellowColor{
+    
+    color:yellow;
+}
