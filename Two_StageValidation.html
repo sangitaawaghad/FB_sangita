@@ -1,0 +1,257 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+   $('#btn_login_details').click(function(){
+     var error_firstname='';
+     var error_lastname='';
+	 var error_phone='';
+	 var error_maritalstatus='';
+	 var error_email='';
+	 var ph_validation=/^\d{10}$/;
+	 if($.trim($('#phone').val()).length==0)
+	 {
+	    error_phone='Phone number is Required';
+		$('#error_phone').text(error_phone);
+		$('#phone').addClass('has_error');
+	 }else
+	 {
+	    if(!ph_validation.test($('#phone').val()))
+		{
+		   error_phone='Invalid Phone number';
+		   $('#error_phone').text(error_phone);
+		   $('#phone').addClass('has_error');
+		}
+		else{
+	    error_phone='';
+		$('#error_phone').text(error_phone);
+		$('#phone').removeClass('has_error');}
+	 }
+	 
+	 /*var filter=/^([a-zA-A0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4}+$/;*/
+	 var filter=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+	 if($.trim($('#email').val()).length==0)
+	 {
+	    error_email='Email is required';
+		$('#error_email').text(error_email);
+		$('#email').addClass('has_error');
+	 }else
+	 {
+	   if(!filter.test($('#email').val()))
+	   {
+	      error_email='Invalid Email ';
+		  $('#error_email').text(error_email);
+		  $('#email').addClass('has_error');
+	   }else
+	   {
+	      error_email='';
+		  $('#error_email').text(error_email);
+		  $('#email').removeClass('has_error');
+	   }
+	 }
+	 if($.trim($('#firstname').val()).length==0)
+	 {
+	    error_firstname='First Name Required';
+		$('#error_firstname').text(error_firstname);
+		$('#firstname').addClass('has_error');
+	 }else
+	 {
+	    error_firstname='';
+		$('#error_firstname').text(error_firstname);
+		$('#firstname').removeClass('has_error');
+	 }
+	 if($.trim($('#lastname').val()).length==0)
+	 {
+	    error_lastname='last Name Required';
+		$('#error_lastname').text(error_lastname);
+		$('#lastname').addClass('has_error');
+	 }else
+	 {
+	    error_lastname='';
+		$('#error_lastname').text(error_lastname);
+		$('#lastname').removeClass('has_error');
+	 }
+	 if($.trim($('#maritalstatus').val()).length==0)
+	 {
+	    error_maritalstatus='Marital Status is Required';
+		$('#error_maritalstatus').text(error_maritalstatus);
+		$('#maritalstatus').addClass('has_error');
+	 }else
+	 {
+	    error_maritalstatus='';
+		$('#error_maritalstatus').text(error_maritalstatus);
+		$('#maritalstatus').removeClass('has_error');
+	 }
+	 
+	 if(error_firstname!='' || error_lastname!='' ||error_email!='' || error_maritalstatus!=''||error_phone!='')
+	 {
+	   return false;
+	 }
+	 else
+	 {
+	    $('#list_login_details').removeClass('active active_tab1');
+		$('#list_login_details').removeAttr('href data-toggle');
+		$('#login_details').removeClass('active');
+		$('#list_login_details').addClass('inactive_tab1');
+		$('#list_personal_details').removeClass('inactive_tab1');
+		$('#list_personal_details').addClass('active active_tab1');
+		$('#list_personal_details').attr('herf','#persona_details');
+		$('#list_personal_details').attr('data-toggle','tab');
+		$('#persona_details').addClass('active in');
+	}
+	});
+	$('#previous_btn_personal_details').click(function(){
+	   $('#list_personal_details').removeClass('active active_tab1');
+	   $('#list_personal_details').removeAttr('href data-toggle');
+	   $('#persona_details').removeClass('active in');
+	   $('#list_login_details').removeClass('inactive_tab1');
+	   $('#list_login_details').addClass('active_tab1 active');
+	   $('#list_login_details').attr('href','#login_details');
+	   $('#list_login_details').attr('data-toggle','tab');
+	   $('#login_details').addClass('active in')
+	   
+	});
+	
+	$('#btn_personal_details').click(function(){
+	 var error_education='';
+     var error_biodata='';
+	if($.trim($('#education').val()).length==0)
+	 {
+	    error_education='Education is Required';
+		$('#error_education').text(error_education);
+		$('#education').addClass('has_error');
+	 }else
+	 {
+	    error_education='';
+		$('#error_education').text(error_education);
+		$('#education').removeClass('has_error');
+	 }
+	if($.trim($('#biodata').val()).length==0)
+	 {
+	    error_biodata='Education is Required';
+		$('#error_biodata').text(error_biodata);
+		$('#biodata').addClass('has_error');
+	 }else
+	 {
+	    error_biodata='';
+		$('#error_biodata').text(error_biodata);
+		$('#biodata').removeClass('has_error');
+	 }
+	 if(error_education!='' || error_biodata!='')
+	 {
+	   return false;
+	 }
+	 else
+	 {
+	    $('#btn_personal_details').submit();
+	}
+	
+	});
+	
+});
+</script>
+<style>
+.box
+{
+  width:800px;
+  margin:0 auto;
+}
+.active_tab1
+{
+   backgraound-color=#fff;
+   color:#333;
+   font-weight:600;
+}
+.inactive_tab1
+{
+   background-color:#f5f5f5;
+   color:#333;
+   cursor:not-allowed;
+}
+.has-error
+{  
+   border-color:#cc0000;
+   background-color:#ffff99;
+}
+.active_
+</style>
+</head>
+<body>
+<form method="post" id="registerd_form">
+ <ul class="nav nav-tabs">
+ <li class="nav-link"><a class=""nav-link active_tab1" style="border:1px solid #ccc" id="list_login_details">Login Details</a></li>
+ <li class="nav-link"><a class=""nav-link inactive_tab1" style="border:1px solid #ccc" id="list_personal_details">Personal Details</a></li>
+ </ul>
+ <div class="tab-content" style="margin-top:16px;">
+  <div class="tab-pane active" id="login_details">
+     <div class="panel panel-default">
+	    <div class=""panel-heading>Login Details
+		</div>
+		<div class="panel-body">
+		  <div class="form-group">
+		     <label>First Name</lable>
+			 <input type="text" name="firstname" id="firstname" value="" class="form-control"/>
+			 <span id="error_firstname" class="text-danger"></span>
+		  </div>
+		  <div class="form-group">
+		     <label>Last Name</lable>
+			 <input type="text" name="lastname" id="lastname" value="" class="form-control"/>
+			 <span id="error_lastname" class="text-danger"></span>
+		  </div>
+		  <div class="form-group">
+		     <label>Email</lable>
+			 <input type="text" name="email" id="email" value="" class="form-control"/>
+			 <span id="error_email" class="text-danger"></span>
+		  </div>
+		  <div class="form-group">
+		     <label>Phone No</lable>
+			 <input type="text" name="phone" id="phone" value="" class="form-control"/>
+			 <span id="error_phone" class="text-danger"></span>
+		  </div>
+		  <div class="form-group">
+		     <label>Gender</lable>
+			 <label class="radio-inline"><input type="radio" name="gender" value="male" checked/>Male</label>
+			 <label class="radio-inline"><input type="radio" name="gender" value="male" checked/>Female</label>
+			 <span id="error_lastname" class="text-danger"></span>
+		  </div>
+		  <div class="form-group">
+		     <label>Marital Status</lable>
+			 <input type="text" name="maritalstatus" id="maritalstatus" value="" class="form-control"/>
+			 <span id="error_maritalstatus" class="text-danger"></span>
+		  </div>
+		  <div align="center">
+		    <button type="button" name="btn_login_details" id="btn_login_details" class="btn btn-info btn-lg">Next</button>
+		  
+		  </div>
+		</div>
+	 </div>
+  </div>
+  <div class="tab-pane fade" id="persona_details">  
+     <div class="panel-heading">fill personal Details</div>
+	 <div class="panel-body">
+	    <div class="form-group">
+		   <label>Education</label>
+		   <textarea name="education" id="education" class="form-control"></textarea>
+		   <span id="error_education" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+		   <label>Bio Data</label>
+		   <textarea name="biodata" id="biodata" class="form-control"></textarea>
+		   <span id="error_biodata" class="text-danger"></span>
+		</div>
+		<div align="center">
+		  <button type="button" name="previous_btn_personal_details" id="previous_btn_personal_details" class="btn btn-info btn-lg">Previous</button>
+		  <button type="button" name="btn_personal_details" id="btn_personal_details" class="btn btn-info btn-lg">Register</button>
+		</div>
+	 </div>
+ </div>
+</form>
+</body>
+</html>
